@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Delete, Body, HttpException, HttpStatus, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param, ParseIntPipe } from '@nestjs/common';
 import { ServiceService } from './service.service';
 import { ServiceInterface } from './interface/service.interface';
 import { CreateServiceDto } from './dto/create.service.dto';

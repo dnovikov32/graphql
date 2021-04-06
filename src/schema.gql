@@ -1,0 +1,13 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Service {
+  id: Int!
+  title: String
+}
+
+type Query {
+  services: [Service!]!
+  service(id: Int!): Service!
+}
