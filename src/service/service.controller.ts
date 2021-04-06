@@ -3,7 +3,6 @@ import { ServiceService } from './service.service';
 import { ServiceInterface } from './interface/service.interface';
 import { CreateServiceDto } from './dto/create.service.dto';
 import { Service } from './entity/service.entity';
-import {find} from "rxjs/operators";
 
 @Controller('service')
 export class ServiceController {
