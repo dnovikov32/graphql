@@ -1,15 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { ServiceInterface } from './interface/service.interface';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Service } from './entity/service.entity';
+import { Repository } from 'typeorm';
+import { CreateServiceDto } from './dto/create.service.dto';
 
 @Injectable()
 export class ServiceService {
-  private readonly services: ServiceInterface[] = [];
+  constructor(
+    @InjectRepository(Service)
+    private serviceRepository: Repository<Service>,
+  ) {}
 
-  create(service: ServiceInterface) {
-    this.services.push(service);
+  create(CreateServiceDto: CreateServiceDto): Promise<Service> {
+    const service = new Service();
+
+    service.title = CreateServiceDto.title;
+
+    return this.serviceRepository.save(service);
   }
 
-  findAll(): ServiceInterface[] {
-    return this.services;
+  findOne(id: number): Promise<Service> {
+    return this.serviceRepository.findOne(id);
+  }
+
+  findAll(): Promise<Service[]> {
+    return this.serviceRepository.find();
+  }
+
+  async remove(id: number): Promise<void> {
+    await this.serviceRepository.delete(id);
   }
 }

@@ -1,18 +1,17 @@
-import {Controller, Get, Post, Body, HttpException, HttpStatus, Param, ParseIntPipe} from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, HttpException, HttpStatus, Param, ParseIntPipe } from '@nestjs/common';
 import { ServiceService } from './service.service';
 import { ServiceInterface } from './interface/service.interface';
 import { CreateServiceDto } from './dto/create.service.dto';
-
-// import { Request } from 'express';
-// import { CreateServiceDto } from './create.service.dto';
+import { Service } from './entity/service.entity';
+import {find} from "rxjs/operators";
 
 @Controller('service')
 export class ServiceController {
   constructor(private readonly service: ServiceService) {}
 
   @Post()
-  create(@Body() dto: CreateServiceDto) {
-    this.service.create(dto);
+  create(@Body() dto: CreateServiceDto): Promise<Service> {
+    return this.service.create(dto);
   }
 
   @Get()
@@ -21,12 +20,12 @@ export class ServiceController {
   }
 
   @Get(':id')
-  async finOne(@Param('id', ParseIntPipe) id: number): Promise<string> {
-    return `ID # ${id}`;
+  async finOne(@Param('id', ParseIntPipe) id: number): Promise<Service> {
+    return this.service.findOne(id);
   }
 
-  @Get('exception')
-  async testException() {
-    throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+  @Delete(':id')
+  remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
+    return this.service.remove(id);
   }
 }
