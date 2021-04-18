@@ -1,6 +1,6 @@
 import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany} from 'typeorm';
-import { Address } from '../../address/address.entity';
-import { Group } from '../../group/group.entity';
+import { Address } from '../address/address.entity';
+import { Group } from '../group/group.entity';
 
 @Entity()
 export class Service {

@@ -1,7 +1,7 @@
 import {Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne} from 'typeorm';
 import { District } from '../district/district.entity';
 import { Area } from "../area/area.entity";
-import {Service} from "../service/entity/service.entity";
+import {Service} from "../service/service.entity";
 
 @Entity()
 export class Address {

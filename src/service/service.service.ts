@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Service } from './entity/service.entity';
+import { Service } from './service.entity';
 import { Repository } from 'typeorm';
 import { ServiceCreateDto } from './dto/service.create.dto';
 
@@ -15,6 +15,7 @@ export class ServiceService {
     const service = new Service();
 
     service.name = dto.name;
+    service.description = dto.description;
 
     return this.serviceRepository.save(service);
   }

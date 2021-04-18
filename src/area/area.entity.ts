@@ -1,6 +1,6 @@
-import {Entity, Column, PrimaryGeneratedColumn, OneToMany} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { District } from '../district/district.entity';
-import {Address} from "../address/address.entity";
+import { Address } from '../address/address.entity';
 
 @Entity()
 export class Area {
