@@ -1,0 +1,32 @@
+type Query {
+    users: [User]
+}
+
+type User {
+    id: Int!
+    name: String!
+    followes: [User]
+}
+
+
+{
+    users {
+        name
+        followes {
+            name,
+            followes {
+                name,
+                followes {
+                    name,
+                    followes {
+                        name
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+# https://github.com/stems/graphql-depth-limit
