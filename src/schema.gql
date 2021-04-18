@@ -11,12 +11,13 @@ type District {
 type Area {
   id: Int!
   name: String!
-  districts: [District!]!
+  districts: [District!]
 }
 
 type Service {
   id: Int!
-  name: String
+  name: String!
+  description: String
 }
 
 type Query {

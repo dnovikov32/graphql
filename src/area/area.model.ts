@@ -9,6 +9,6 @@ export class Area {
   @Field({ nullable: false })
   name: string;
 
-  @Field(type => [District])
-  districts: [District];
+  @Field(type => [District], { nullable: true })
+  districts?: [District];
 }
