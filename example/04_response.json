@@ -1,0 +1,34 @@
+{
+  "id": 12030730,
+  "title": "От монолита к микросервисам",
+  "price": 618,
+  "teaser": "Это практическое руководство содержит ряд наглядных примеров и шаблонов миграции....",
+  "description": "Это практическое руководство содержит ряд наглядных примеров и шаблонов миграции ...",
+  "author": {
+    "firstName": "Логунов",
+    "lastName": "Александр"
+  },
+  "images": [
+    "https://satic.book.ru/assets/images_01.jpg",
+    "https://satic.book.ru/assets/images_02.jpg",
+    "https://satic.book.ru/assets/images_03.jpg",
+    "https://satic.book.ru/assets/images_04.jpg",
+    "https://satic.book.ru/assets/images_05.jpg"
+  ],
+  "comments": [
+    {
+      "author": {
+        "firstName": "Сергей",
+        "lastName": "Гагарин"
+      },
+      "text": "Практическая информация. Структурированное изложение. Нет воды.",
+      "rating": 10,
+      "images": [
+        "https://satic.book.ru/assets/comment_01.jpg",
+        "https://satic.book.ru/assets/comment_02.jpg",
+        "https://satic.book.ru/assets/comment_03.jpg"
+      ]
+    }
+  ]
+}
+

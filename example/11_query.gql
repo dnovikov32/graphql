@@ -1,0 +1,37 @@
+{
+    service(id: 10) {
+        name
+        description
+        address {
+            address
+            district {
+                name
+                area {
+                    name
+                }
+            }
+        }
+        groups {
+            groupId
+            name
+        }
+    }
+}
+
+
+{
+    services {
+        name
+        description
+    }
+}
+
+
+
+
+
+type Query {
+    service(id: Int!): Service!
+    services: [Service!]!
+}
+

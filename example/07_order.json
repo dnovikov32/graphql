@@ -1,0 +1,18 @@
+{
+  "id": 693764,
+  "quantity": 2,
+  "total": 2000,
+  "items": [
+    {
+      "product": {
+        "id": 42,
+        "price": 618,
+        "title": "От монолита к микросервисам",
+        "image": "https://satic.book.ru/assets/images_01.jpg"
+      },
+      "quantity": 1,
+      "total": 500
+    }
+  ]
+}
+

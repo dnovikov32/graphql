@@ -1,0 +1,33 @@
+type Address {
+    address: String!
+    point: String
+    area: Area!
+    district: District!
+}
+
+type Area {
+    name: String!
+}
+
+type District {
+    name: String
+    area: Area!
+}
+
+
+type Service {
+    name: String!
+    description: String
+    address: Address
+    groups: [Group]
+}
+
+type Group {
+    groupId: String!
+    name: String
+    maxMembers: Int
+    currentMembers: Int
+    service: Service
+}
+
+
