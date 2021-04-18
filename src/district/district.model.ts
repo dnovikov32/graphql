@@ -1,14 +1,14 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { District } from "../district/district.model";
+import {Area} from "../area/area.model";
 
 @ObjectType()
-export class Area {
+export class District {
   @Field(type => Int)
   id: number;
 
   @Field({ nullable: false })
   name: string;
 
-  @Field(type => [District])
-  districts: [District];
+  @Field(type => Area)
+  area: Area;
 }

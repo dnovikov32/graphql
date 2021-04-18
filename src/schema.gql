@@ -2,9 +2,16 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type District {
+  id: Int!
+  name: String!
+  area: Area!
+}
+
 type Area {
   id: Int!
   name: String!
+  districts: [District!]!
 }
 
 type Service {
