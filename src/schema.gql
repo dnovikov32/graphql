@@ -12,6 +12,9 @@ type Area {
   id: Int!
   name: String!
   districts: [District!]
+
+  """Нормализованное имя"""
+  normalizedName: String! @deprecated(reason: "Больше не используется")
 }
 
 type Service {

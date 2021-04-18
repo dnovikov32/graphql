@@ -11,4 +11,7 @@ export class Area {
 
   @Field(type => [District], { nullable: true })
   districts?: [District];
+
+  @Field({ description: `Нормализованное имя`, deprecationReason: 'Больше не используется' })
+  normalizedName: string;
 }
