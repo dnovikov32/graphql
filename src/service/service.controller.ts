@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Delete, Body, Param, ParseIntPipe } from '@nestjs/common';
 import { ServiceService } from './service.service';
-import { ServiceInterface } from './interface/service.interface';
-import { CreateServiceDto } from './dto/create.service.dto';
+import { ServiceCreateDto } from './dto/service.create.dto';
 import { Service } from './entity/service.entity';
 
 @Controller('service')
@@ -9,12 +8,12 @@ export class ServiceController {
   constructor(private readonly service: ServiceService) {}
 
   @Post()
-  create(@Body() dto: CreateServiceDto): Promise<Service> {
+  create(@Body() dto: ServiceCreateDto): Promise<Service> {
     return this.service.create(dto);
   }
 
   @Get()
-  async findAll(): Promise<ServiceInterface[]> {
+  async findAll(): Promise<Service[]> {
     return this.service.findAll();
   }
 
