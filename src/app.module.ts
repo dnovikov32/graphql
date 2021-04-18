@@ -6,6 +6,8 @@ import { DistrictModule } from './district/district.module';
 import { AddressModule } from './address/address.module';
 import { GroupModule } from './group/group.module';
 import { ServiceModule } from './service/service.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { DataLoaderInterceptor } from 'nestjs-dataloader'
 
 @Module({
   imports: [
@@ -19,5 +21,11 @@ import { ServiceModule } from './service/service.module';
     GroupModule,
     ServiceModule,
   ],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: DataLoaderInterceptor,
+    }
+  ]
 })
 export class AppModule {}

@@ -2,7 +2,10 @@ import {Args, Int, Mutation, Parent, Query, ResolveField, Resolver} from '@nestj
 import { Area } from './area.model';
 import { AreaService } from './area.service';
 import { DistrictService } from '../district/district.service';
-
+import * as DataLoader from 'dataloader';
+import { Loader } from 'nestjs-dataloader';
+import {District} from "../district/district.model";
+import {DistrictLoader} from "../district/district.loader";
 
 @Resolver(of => Area)
 export class AreaResolver {
@@ -21,9 +24,12 @@ export class AreaResolver {
     return this.areaService.findOne(id);
   }
 
-  @ResolveField()
-  async districts(@Parent() area: Area) {
-    return this.districtService.findAll({ area: area.id });
+  @ResolveField(returns => [District])
+  async districts(
+    @Parent() area: Area,
+    @Loader(DistrictLoader) districtLoader: DataLoader<District['id'], District>,
+  ) {
+    return districtLoader.loadMany([area.id])
   }
 
   @Mutation(returns => Area)

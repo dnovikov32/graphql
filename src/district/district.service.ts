@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { District } from "./district.entity";
 
 @Injectable()
@@ -16,6 +16,14 @@ export class DistrictService {
 
   findAll(options: object): Promise<District[]> {
     return this.districtRepository.find(options);
+  }
+
+  findByAreaIds(ids): Promise<District[]> {
+    return this.districtRepository.find({
+      where: {
+        area: In(ids)
+      }
+    });
   }
 
 }
