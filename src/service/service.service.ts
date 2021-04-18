@@ -14,7 +14,7 @@ export class ServiceService {
   create(CreateServiceDto: CreateServiceDto): Promise<Service> {
     const service = new Service();
 
-    service.title = CreateServiceDto.title;
+    service.name = CreateServiceDto.name;
 
     return this.serviceRepository.save(service);
   }

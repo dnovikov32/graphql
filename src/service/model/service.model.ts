@@ -7,7 +7,7 @@ export class Service {
   id: number;
 
   @Field({ nullable: true })
-  title?: string;
+  name?: string;
 
   // @Field({ nullable: true })
   // lastName?: string;

@@ -4,7 +4,7 @@
 
 type Service {
   id: Int!
-  title: String
+  name: String
 }
 
 type Query {
