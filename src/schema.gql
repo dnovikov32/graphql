@@ -17,10 +17,19 @@ type Area {
   normalizedName: String! @deprecated(reason: "Больше не используется")
 }
 
+type Group {
+  id: Int!
+  name: String!
+  maxMembers: Int!
+  currentMembers: Int!
+  service: Service!
+}
+
 type Service {
   id: Int!
   name: String!
   description: String
+  groups: [Group!]
 }
 
 type Query {
